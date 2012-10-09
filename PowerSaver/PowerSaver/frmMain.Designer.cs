@@ -32,11 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.chkRunOnWindowsStartup = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblAppName = new System.Windows.Forms.Label();
+            this.lblAppDesc = new System.Windows.Forms.Label();
+            this.lblAppDev = new System.Windows.Forms.Label();
             this.linkUrl = new System.Windows.Forms.LinkLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblLicense = new System.Windows.Forms.Label();
             this.SysTrayNotification = new System.Windows.Forms.NotifyIcon(this.components);
             this.SysTrayContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.runWhenWindowsStartsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,7 +45,6 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SysTrayContextMenu.SuspendLayout();
@@ -71,33 +71,33 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // lblAppName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(52, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Power Saver 1.0";
+            this.lblAppName.AutoSize = true;
+            this.lblAppName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppName.Location = new System.Drawing.Point(52, 23);
+            this.lblAppName.Name = "lblAppName";
+            this.lblAppName.Size = new System.Drawing.Size(101, 13);
+            this.lblAppName.TabIndex = 2;
+            this.lblAppName.Text = "Power Saver 1.0";
             // 
-            // label2
+            // lblAppDesc
             // 
-            this.label2.Location = new System.Drawing.Point(52, 42);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(251, 31);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "A simple utility, which will turn off your monitor when you lock your work statio" +
+            this.lblAppDesc.Location = new System.Drawing.Point(52, 42);
+            this.lblAppDesc.Name = "lblAppDesc";
+            this.lblAppDesc.Size = new System.Drawing.Size(251, 31);
+            this.lblAppDesc.TabIndex = 2;
+            this.lblAppDesc.Text = "A simple utility, which will turn off your monitor when you lock your work statio" +
     "n.";
             // 
-            // label3
+            // lblAppDev
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(52, 73);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Developed by Anuraj ";
+            this.lblAppDev.AutoSize = true;
+            this.lblAppDev.Location = new System.Drawing.Point(52, 73);
+            this.lblAppDev.Name = "lblAppDev";
+            this.lblAppDev.Size = new System.Drawing.Size(109, 13);
+            this.lblAppDev.TabIndex = 2;
+            this.lblAppDev.Text = "Developed by Anuraj ";
             // 
             // linkUrl
             // 
@@ -112,17 +112,26 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.lblLicense);
             this.groupBox1.Controls.Add(this.linkUrl);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lblAppDesc);
+            this.groupBox1.Controls.Add(this.lblAppDev);
+            this.groupBox1.Controls.Add(this.lblAppName);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Location = new System.Drawing.Point(3, -4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(334, 129);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
+            // 
+            // lblLicense
+            // 
+            this.lblLicense.AutoSize = true;
+            this.lblLicense.Location = new System.Drawing.Point(52, 110);
+            this.lblLicense.Name = "lblLicense";
+            this.lblLicense.Size = new System.Drawing.Size(237, 13);
+            this.lblLicense.TabIndex = 4;
+            this.lblLicense.Text = "Licensed under Microsoft Public License (Ms-PL)";
             // 
             // SysTrayNotification
             // 
@@ -158,6 +167,7 @@
             // 
             // aboutToolStripMenuItem
             // 
+            this.aboutToolStripMenuItem.Image = global::PowerSaver.Properties.Resources.savepower;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.aboutToolStripMenuItem.Text = "&About";
@@ -174,15 +184,6 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(52, 110);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(237, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Licensed under Microsoft Public License (Ms-PL)";
             // 
             // frmMain
             // 
@@ -217,9 +218,9 @@
 
         private System.Windows.Forms.CheckBox chkRunOnWindowsStartup;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblAppName;
+        private System.Windows.Forms.Label lblAppDesc;
+        private System.Windows.Forms.Label lblAppDev;
         private System.Windows.Forms.LinkLabel linkUrl;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.NotifyIcon SysTrayNotification;
@@ -229,7 +230,7 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblLicense;
     }
 }
 

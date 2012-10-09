@@ -1,4 +1,5 @@
-﻿namespace PowerSaver
+﻿/* Microsoft Public License (Ms-PL) */
+namespace PowerSaver
 {
     using System;
     using System.Diagnostics;
@@ -11,15 +12,22 @@
         {
             InitializeComponent();
             WindowState = FormWindowState.Minimized;
-            SystemEvents.SessionSwitch += new SessionSwitchEventHandler((sender, e) =>
+            SystemEvents.SessionSwitch += new SessionSwitchEventHandler(SystemEvents_SessionSwitch);
+
+            lblAppDesc.Text = Constants.AppDescription;
+            lblAppDev.Text = Constants.AppDevelopedBy;
+            lblAppName.Text = Constants.AppName;
+            lblLicense.Text = Constants.AppLicense;
+            linkUrl.Text = Constants.BlogUrl;
+            chkRunOnWindowsStartup.Text = Constants.CheckBoxText;
+        }
+
+        private void SystemEvents_SessionSwitch(object sender, SessionSwitchEventArgs e)
+        {
+            if (SessionSwitchReason.SessionLock == e.Reason)
             {
-                switch (e.Reason)
-                {
-                    case SessionSwitchReason.SessionLock:
-                        NativeMethods.TurnOffMonitor();
-                        break;
-                }
-            });
+                NativeMethods.TurnOffMonitor();
+            }
         }
 
         private void chkRunOnWindowsStartup_CheckedChanged(object sender, EventArgs e)
@@ -31,7 +39,7 @@
 
         private void linkUrl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("http://www.dotnetthoughts.net");
+            Process.Start(Constants.BlogUrl);
         }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -65,11 +73,12 @@
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            
+
             Visible = false;
             SysTrayNotification.Icon = Icon;
-            SysTrayNotification.BalloonTipText = "Power Saver - Running...";
-            SysTrayNotification.BalloonTipTitle = "Power Saver";
+            SysTrayNotification.BalloonTipText = Constants.BalloonTipText;
+            SysTrayNotification.BalloonTipTitle = Constants.ApplicationTitle;
+            SysTrayNotification.BalloonTipIcon = ToolTipIcon.Info;
             SysTrayNotification.ShowBalloonTip(2);
             chkRunOnWindowsStartup.Checked = runWhenWindowsStartsToolStripMenuItem.Checked = Properties.Settings.Default.RunOnStartup;
         }

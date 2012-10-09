@@ -1,10 +1,11 @@
-﻿using System.Runtime.InteropServices;
-using System.Windows.Forms;
-using Microsoft.Win32;
-
+﻿/* Microsoft Public License (Ms-PL) */
 namespace PowerSaver
 {
-    internal class NativeMethods
+    using System.Runtime.InteropServices;
+    using System.Windows.Forms;
+    using Microsoft.Win32;
+
+    internal sealed class NativeMethods
     {
         private const int HWND_BROADCAST = 0xFFFF;
         private const int SC_MONITORPOWER = 0xF170;
