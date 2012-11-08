@@ -4,6 +4,7 @@ namespace PowerSaver
     using System.Runtime.InteropServices;
     using System.Windows.Forms;
     using Microsoft.Win32;
+    using System.ComponentModel;
 
     internal sealed class NativeMethods
     {
@@ -17,6 +18,9 @@ namespace PowerSaver
 
         [DllImport("user32.dll")]
         private static extern int SendMessage(int hWnd, int hMsg, int wParam, int lParam);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        private static extern bool LockWorkStation();
 
         internal static void RegisterInStartup(bool isChecked)
         {
@@ -35,6 +39,14 @@ namespace PowerSaver
         internal static void TurnOffMonitor()
         {
             SendMessage(HWND_BROADCAST, WM_SYSCOMMAND, SC_MONITORPOWER, MONITOR_OFF);
+        }
+
+        internal static void LockSystem()
+        {
+            if (!LockWorkStation())
+            {
+                throw new Win32Exception(Marshal.GetLastWin32Error());
+            }
         }
     }
 }

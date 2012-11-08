@@ -103,5 +103,10 @@ namespace PowerSaver
         {
             chkRunOnWindowsStartup.Checked = runWhenWindowsStartsToolStripMenuItem.Checked = Properties.Settings.Default.RunOnStartup;
         }
+
+        private void LockSystemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NativeMethods.LockSystem();
+        }
     }
 }

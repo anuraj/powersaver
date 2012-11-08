@@ -45,6 +45,8 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.LockSystemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SysTrayContextMenu.SuspendLayout();
@@ -144,12 +146,14 @@
             // 
             this.SysTrayContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.runWhenWindowsStartsToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.LockSystemToolStripMenuItem,
             this.toolStripMenuItem1,
             this.aboutToolStripMenuItem,
             this.toolStripMenuItem2,
             this.exitToolStripMenuItem});
             this.SysTrayContextMenu.Name = "SysTrayContextMenu";
-            this.SysTrayContextMenu.Size = new System.Drawing.Size(212, 82);
+            this.SysTrayContextMenu.Size = new System.Drawing.Size(212, 132);
             this.SysTrayContextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.SysTrayContextMenu_Opening);
             // 
             // runWhenWindowsStartsToolStripMenuItem
@@ -184,6 +188,18 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(208, 6);
+            // 
+            // LockSystemToolStripMenuItem
+            // 
+            this.LockSystemToolStripMenuItem.Name = "LockSystemToolStripMenuItem";
+            this.LockSystemToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.LockSystemToolStripMenuItem.Text = "&Lock this System";
+            this.LockSystemToolStripMenuItem.Click += new System.EventHandler(this.LockSystemToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -231,6 +247,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Label lblLicense;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem LockSystemToolStripMenuItem;
     }
 }
 
